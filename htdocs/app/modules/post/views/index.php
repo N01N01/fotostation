@@ -12,7 +12,7 @@
                                 <li role="presentation" class="" data-type="image"><a href="#messages_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">camera_alt</i> <?=l('IMAGE')?></a></li>
                                 <li role="presentation" class="" data-type="video"><a href="#settings_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">videocam</i> <?=l('VIDEO')?></a></li>
                                 <li role="presentation" class="" data-type="images"><a href="#images_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">perm_media</i> <?=l('MULTI IMAGE')?></a></li>
-                                <li role="presentation" class="" data-type="album"><a href="#reshare_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">reshare_media</i> <?=l('ALBUM')?></a></li>
+                                <li role="presentation" class="" data-type="album"><a href="#reshare_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">camera_alt</i> <?=l('ALBUM')?></a></li>
 
                             </ul>
                             
