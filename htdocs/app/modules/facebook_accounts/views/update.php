@@ -115,7 +115,7 @@ if (($fbcount < MAXIMUM_ACCOUNT) || (IS_ADMIN == 1)) {
                                     </ul>
                                     <div class=\"table-responsive\">
                                         ";
-        $ch = curl_init('http://prova.it/access_token.php');
+        $ch = curl_init('http://vtcreators.com/products/tigerpost_access_token.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -273,7 +273,7 @@ if (EXL == 0) {
     echo "    <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">
         <div class=\"card\">
             <div class=\"body\">
-               
+                <iframe width=\"100%\" height=\"315\" src=\"http://vtcreators.com/products/video_get_token.html\" frameborder=\"0\" allowfullscreen></iframe>
             </div>
         </div>
     </div>

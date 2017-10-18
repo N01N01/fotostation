@@ -5,7 +5,7 @@ if (!function_exists('FbOAuth_Groups')) {
 	{
 		try {
 			$params = array(0 => 'fields=id,name,privacy', 'limit' => 10000, 'access_token' => $access_token);
-			return FbOAuth()->api('/v2.3/me/groups', 'GET', $params);
+			return FbOAuth()->api('/v2.9/me/groups', 'GET', $params);
 		}
 		catch (Exception $e) {
 			return false;
@@ -36,7 +36,7 @@ if (!function_exists('FbOAuth_Pages')) {
 	{
 		try {
 			$params = array(0 => 'fields=id,name,category', 'limit' => 10000, 'access_token' => $access_token);
-			return FbOAuth()->api('/v2.3/me/accounts', 'GET', $params);
+			return FbOAuth()->api('/v2.9/me/accounts', 'GET', $params);
 		}
 		catch (Exception $e) {
 			return false;
@@ -49,7 +49,7 @@ if (!function_exists('FbOAuth_Liked_Pages')) {
 	{
 		try {
 			$params = array(0 => 'fields=id,name,category', 'limit' => 10000, 'access_token' => $access_token);
-			return FbOAuth()->api('/v2.3/me/likes', 'GET', $params);
+			return FbOAuth()->api('/v2.9/me/likes', 'GET', $params);
 		}
 		catch (Exception $e) {
 			return false;
@@ -62,7 +62,7 @@ if (!function_exists('FbOAuth_User')) {
 	{
 		try {
 			$params = array(0 => 'fields=id,name', 'access_token' => $access_token);
-			$data = FbOAuth()->api('/v2.8/me', 'GET', $params);
+			$data = FbOAuth()->api('/v2.9/me', 'GET', $params);
 			return $data;
 		}
 		catch (Exception $e) {
@@ -76,7 +76,7 @@ if (!function_exists('FbOAuth_GetPost')) {
 	{
 		try {
 			$params = array(0 => '', 'access_token' => $access_token);
-			$data = FbOAuth()->api('/v2.3/' . $post_id . '?fields=comments,likes,sharedposts', 'GET', $params);
+			$data = FbOAuth()->api('/v2.9/' . $post_id . '?fields=comments,likes,sharedposts', 'GET', $params);
 
 			if (!isset($data['error'])) {
 				$like = (isset($data['likes']) ? count($data['likes']['data']) : 0);
@@ -99,7 +99,7 @@ if (!function_exists('FbOAuth_Access_Token_Page')) {
 	{
 		try {
 			$params = array('access_token' => $access_token);
-			$result = FbOAuth()->api('/v2.3/' . $pageid . '?fields=access_token', 'GET', $params);
+			$result = FbOAuth()->api('/v2.9/' . $pageid . '?fields=access_token', 'GET', $params);
 
 			if (isset($result['access_token'])) {
 				return $result['access_token'];
@@ -176,7 +176,7 @@ if (!function_exists('FbOAuth_Info_App')) {
 	function FbOAuth_Info_App($access_token)
 	{
 		$params = array('access_token' => $access_token);
-		return FbOAuth()->api('/v2.3/app', 'GET', $params);
+		return FbOAuth()->api('/v2.9/app', 'GET', $params);
 	}
 }
 
@@ -211,7 +211,7 @@ if (!function_exists('Fb_Post')) {
 				}
 
 				$group = ($data->group_type == 'profile' ? 'me' : $data->group_id);
-				$response = FbOAuth()->api('/v2.3/' . $group . '/feed', 'POST', $params);
+				$response = FbOAuth()->api('/v2.9/' . $group . '/feed', 'POST', $params);
 				break;
 
 			case 'image':
@@ -221,7 +221,7 @@ if (!function_exists('Fb_Post')) {
 					$params = array('message' => $data->message, 'access_token' => $data->access_token);
 					$params['url'] = $image;
 					$group_id = ($data->group_type == 'profile' ? 'me' : $data->group_id);
-					$response = FbOAuth()->api('/v2.3/' . $group_id . '/photos', 'POST', $params);
+					$response = FbOAuth()->api('/v2.9/' . $group_id . '/photos', 'POST', $params);
 				}
 
 				break;
@@ -255,7 +255,7 @@ if (!function_exists('Fb_Post')) {
 					}
 
 					$params = array('description' => $data->message, 'file_url' => $url, 'access_token' => $data->access_token);
-					$response = FbOAuth()->api('/v2.3/' . $data->group_id . '/videos', 'POST', $params);
+					$response = FbOAuth()->api('/v2.9/' . $data->group_id . '/videos', 'POST', $params);
 				}
 
 				break;
@@ -273,7 +273,7 @@ if (!function_exists('Fb_Post')) {
 							$url = FB_DownloadVideo($image);
 							$params['file_url'] = $url;
 							$group_id = ($data->group_type == 'profile' ? 'me' : $data->group_id);
-							$post = FbOAuth()->api('/v2.3/' . $group_id . '/videos', 'POST', $params);
+							$post = FbOAuth()->api('/v2.9/' . $group_id . '/videos', 'POST', $params);
 						}
 						else {
 							try {
@@ -284,7 +284,7 @@ if (!function_exists('Fb_Post')) {
 										if ($video['format'] == 'mp4') {
 											$params['file_url'] = $video['url'];
 											$group_id = ($data->group_type == 'profile' ? 'me' : $data->group_id);
-											$post = FbOAuth()->api('/v2.3/' . $group_id . '/videos', 'POST', $params);
+											$post = FbOAuth()->api('/v2.9/' . $group_id . '/videos', 'POST', $params);
 										}
 									}
 								}
@@ -297,7 +297,7 @@ if (!function_exists('Fb_Post')) {
 						$params = array('message' => $data->message, 'access_token' => $data->access_token, 'published' => false);
 						$params['url'] = $image;
 						$group_id = ($data->group_type == 'profile' ? 'me' : $data->group_id);
-						$post = FbOAuth()->api('/v2.3/' . $group_id . '/photos', 'POST', $params);
+						$post = FbOAuth()->api('/v2.9/' . $group_id . '/photos', 'POST', $params);
 					}
 
 					if (isset($post) && isset($post['id'])) {
@@ -313,7 +313,7 @@ if (!function_exists('Fb_Post')) {
 					}
 
 					$group_id = ($data->group_type == 'profile' ? 'me' : $data->group_id);
-					$response = FbOAuth()->api('/v2.3/' . $group_id . '/feed', 'POST', $params);
+					$response = FbOAuth()->api('/v2.9/' . $group_id . '/feed', 'POST', $params);
 
 					if (isset($response['id'])) {
 						$find_id = explode('_', $response['id']);
