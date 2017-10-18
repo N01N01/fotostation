@@ -210,7 +210,9 @@
 	<lang slug="Report all info for posted. For example: post success, failure, processing, repeat, ...">	
 		<text>Report all info for posted. For example: post success, failure, processing, repeat, ...</text>
 	</lang>
-	<lang slug="Preview Post">	
+	<lang slug="ALBUM">
+	<text>RESHARE ALBUMs</text>
+	<lang slug="Preview Post">
 		<text>Preview Post</text>
 	</lang>
 	<lang slug="Help you preview your post before publishing them">	

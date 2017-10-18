@@ -753,6 +753,8 @@
     </lang>
     <lang slug="MULTI IMAGE">
         <text>MULTI IMAGE</text>
+    <lang slug="ALBUM">
+        <text>RESHARE ALBUM</text>
     </lang>
     <lang slug="Delete all">
         <text>Delete all</text>
