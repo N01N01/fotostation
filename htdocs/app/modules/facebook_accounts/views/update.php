@@ -273,7 +273,7 @@ if (EXL == 0) {
     echo "    <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">
         <div class=\"card\">
             <div class=\"body\">
-                <iframe width=\"100%\" height=\"315\" src=\"http://vtcreators.com/products/video_get_token.html\" frameborder=\"0\" allowfullscreen></iframe>
+               
             </div>
         </div>
     </div>
