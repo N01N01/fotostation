@@ -44,8 +44,8 @@ class package_settings extends MX_Controller {
 		$modules = array(
 			"maximum_account"     => (int)post("maximum_account"),
 			"maximum_groups"      => ($groups > 5000)?5000:$groups,
-			"maximum_pages"       => ($pages > 50)?50:$pages,
-			"maximum_liked_pages" => ($liked_pages > 50)?50:$liked_pages,
+			"maximum_pages"       => ($pages > 50)?500000:$pages,
+			"maximum_liked_pages" => ($liked_pages > 50)?500000:$liked_pages,
 		);
 
 		$check_default = $this->model->fetch("*", PACKAGE);
