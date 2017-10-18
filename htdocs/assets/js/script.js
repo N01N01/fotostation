@@ -37,7 +37,7 @@
 
         if($('.js-dataTable').length > 0 || $('.js-dataTableSchedule').length > 0 || $('.js-dataTableScheduleAjax').length > 0){
             _dataTable = $('.js-dataTable').DataTable({
-                paging: false,
+                paging: true,
                 columnDefs: [ {
                     targets: 0,
                     orderable: false
@@ -61,7 +61,7 @@
 
             _dataTableSchedule = $('.js-dataTableSchedule').DataTable({
                 paging: true,
-                pageLength: 50,
+                pageLength: 500,
                 lengthMenu: [[10, 25, 50, 100, 200, 500, 1000, -1], [10, 25, 50, 100, 200, 500, 1000, "All"]],
                 columnDefs: [ {
                     targets: 0,
@@ -95,7 +95,7 @@
                     pages: 1 // number of pages to cache
                 }),
                 paging: true,
-                pageLength: 50,
+                pageLength: 500,
                 lengthMenu: [[10, 25, 50, 100, 200, 500], [10, 25, 50, 100, 200, 500]],
                 
                 aaSorting: [],
