@@ -37,7 +37,7 @@
 
         if($('.js-dataTable').length > 0 || $('.js-dataTableSchedule').length > 0 || $('.js-dataTableScheduleAjax').length > 0){
             _dataTable = $('.js-dataTable').DataTable({
-                paging: true,
+                paging: false,
                 columnDefs: [ {
                     targets: 0,
                     orderable: false
