@@ -1205,7 +1205,7 @@ $.fn.dataTable.pipeline = function ( opts ) {
                         _data    = $.param({token:token, id: _id});
                         if(!_that.hasClass('disable')){
                             _that.addClass('disable');
-                            $.post(PATH+"/schedules/ajax_analytics_post", _data, function(data){
+                            $.post(PATH+"schedules/ajax_analytics_post", _data, function(data){
                                 _that.attr("data-content", data.txt);
                                 _that.popover('show');
                             },'json');
