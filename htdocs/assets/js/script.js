@@ -324,7 +324,7 @@
             var _that = $(this);
             var fm = $('<div/>').dialogelfinder({
                 url : BASE+'assets/plugins/elfinder/php/connector.php',
-                lang : 'en',
+                lang : 'it',
                 width : ($(window).width() > 840)?840:$(window).width() - 30,
                 resizable: false,
                 destroyOnClose : true,
@@ -353,7 +353,7 @@
             var _that = $(this);
             var fm = $('<div/>').dialogelfinder({
                 url : BASE+'assets/plugins/elfinder/php/connector.php',
-                lang : 'en',
+                lang : 'it',
                 width : ($(window).width() > 840)?840:$(window).width() - 30,
                 resizable: false,
                 destroyOnClose : true,

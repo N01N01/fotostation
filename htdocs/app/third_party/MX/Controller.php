@@ -20,7 +20,7 @@ class MX_Controller
 			if ((segment(1) != 'settings') && (segment(1) != '') && (segment(1) != 'cron') && (segment(2) != 'ajax_login') && (segment(2) != 'ajax_login')) {
 				$code = urlencode($settings->purchase_code);
 				$website = str_replace('install/', '', @$_SERVER['HTTP_REFERER']);
-				$url = 'http://quandolovendoio.com/license/verify?purchase_code=' . $code . '&domain=' . $_SERVER['HTTP_HOST'] . '&website=' . $website . '&app=tigerpost';
+				$url = 'http://quandolovendoio.com/license/verify?purchase_code=' . $code . '&domain=' . $_SERVER['HTTP_HOST'] . '&website=' . $website . '&app=post';
 				$ch = curl_init();
 				curl_setopt($ch, CURLOPT_HEADER, 0);
 				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
