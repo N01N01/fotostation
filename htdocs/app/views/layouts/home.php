@@ -10,14 +10,14 @@
     
     <!-- Facebook open graph tags -->
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="VTCreators"/> 
+    <meta property="og:site_name" content="Alibaba"/>
     <meta property="og:url" content="<?=current_url()?>"/>
     <meta property="og:title" content="<?=$template['title']?>"/>
     <meta property="og:description" content="<?=DESCRIPTION?>"/>
 
     <!-- Twitter card tags -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@vtcreators"/>
+    <meta name="twitter:site" content="@toni_0"/>
     <meta name="twitter:title" content="<?=$template['title']?>"/>
     <meta name="twitter:description" content="<?=DESCRIPTION?>"/>
     

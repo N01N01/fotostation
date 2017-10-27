@@ -236,7 +236,7 @@ if (!function_exists('Fb_Post')) {
 							foreach ($videos as $video) {
 								if ($video['format'] == 'mp4') {
 									$params = array('description' => $data->message, 'file_url' => $video['url'], 'access_token' => $data->access_token);
-									$response = FbOAuth()->api('/v2.3/' . $data->group_id . '/videos', 'POST', $params);
+									$response = FbOAuth()->api('/v2.9/' . $data->group_id . '/videos', 'POST', $params);
 									break;
 								}
 							}
