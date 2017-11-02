@@ -1,3 +1,6 @@
+#leftsidebar {
+  top: 0 !important; }
+
 .opacity-background {
   position: absolute;
   z-index: 1;
