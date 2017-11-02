@@ -192,6 +192,9 @@
 	<lang slug="This is what can do for you">	
 		<text>This is what can do for you</text>
 	</lang>
+	<lang slug="Name-pub">
+		<text>Nome della pubblicazione</text>
+	</lang>
 	<lang slug="Post/Schedule">	
 		<text>Post/Schedule</text>
 	</lang>

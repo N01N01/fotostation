@@ -19,11 +19,20 @@
                             <!-- Tab panes -->
                             <div class="row mt15">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb0">
+                                    <label><?=l('Name-pub')?></label>
+
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" name="name_pub" class="form-control">
+                                        </div>
+                                    </div>
                                     <label><?=l('Message')?></label>
+
                                     <div class="form-group">
                                         <div class="form-line p5">
                                             <textarea rows="4" class="form-control no-resize post-message" name="message" placeholder="<?=l('Write something...')?>"></textarea>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
