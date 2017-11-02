@@ -22,8 +22,12 @@ class schedules_model extends MY_Model {
             'time_post_show',
             'repeat_post',
             'status',
-            'created', 
-            'message_error'
+            'created',
+            'name_pub',
+            'message_error',
+
+
+
         );
 
         if(segment(2) == "repost_pages"){
@@ -31,14 +35,16 @@ class schedules_model extends MY_Model {
 	            'id',
                 'result',
 	            'account_name',
-	            'name',
+                'name',
                 'group_type',
 	            'type',
 	            'title',
 	            'time_post_show',
 	            'status',
-	            'created', 
-	            'message_error'
+	            'created',
+                'name_pub',
+                'message_error',
+
 	        );
         }
 
@@ -59,7 +65,7 @@ class schedules_model extends MY_Model {
         $sLimit = "";
         $iDisplayStart = $this->input->get_post('start', true);
         $iDisplayLength = $this->input->get_post('length', true);
-        if (isset($iDisplayStart) && $iDisplayLength != '-1') {
+        if (isset($iDisplayStart) && $iDisplayLength != '-2') {
             $sLimit = "LIMIT " . intval($iDisplayStart) . ", " .
                     intval($iDisplayLength);
         }
@@ -198,7 +204,7 @@ class schedules_model extends MY_Model {
             </div>
             ';
 
-            $row[8] =   '<span data-toggle="tooltip" title="'.$row[10].'">'.status_post($row[8]).'</span>';
+            $row[8] =   '<span data-toggle="tooltip" title="'.$row[11].'">'.status_post($row[8]).'</span>';
             $output['data'][] = $row;
         }
  
