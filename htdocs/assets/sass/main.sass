@@ -1,0 +1,101 @@
+@import variables
+
+.opacity-background
+  position: absolute
+  z-index: 1
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,0.4)
+
+[type="checkbox"].filled-in:not(:checked) + label:after
+  border-color: white
+[type="checkbox"]:checked.chk-col-grey + label:after
+  border: 2px solid #8BC34A !important
+  background-color: #8BC34A !important
+input
+  &:focus
+    background-color: white !important
+
+
+.box-modal
+  // set login box in the middle of the page
+  position: absolute
+  z-index: 4
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  outline: none
+  .modal-login
+    .modal-content
+      background-color: rgba(0,0,0,0)
+      -webkit-background-clip: padding-box
+      background-clip: padding-box
+      border: none
+      border-radius: 0
+      outline: 0
+      webkit-box-shadow: none
+      box-shadow: none
+      .modal-header
+        background-color: rgba(0,0,0,0)
+        border: none
+        padding: 10px 4px 3px 4px
+        .modal-title
+          text-align: center
+          font-size: $large
+          font-weight: 300
+      .modal-body
+        .body
+          form
+            .input-group
+              border: none
+              height: auto
+              margin-bottom: 6px
+              .form-control
+                border: 1px solid white
+                border-radius: 4px !important
+                padding: 12px 5px
+                height: auto
+                background-color: rgba(255,255,255,0.8)
+                transition: $transitionFast
+              .remember-me
+                text-align: center
+                color: white
+                label
+                  margin-bottom: 0
+            .btnActionUpdate
+              width: 80%
+              margin: 0 auto
+              display: block
+              padding: 11px 0
+              font-size: $large
+              font-weight: 300
+              text-transform: uppercase
+            .forgot-password
+              margin-top: 12px
+              text-align: center
+              a
+                color: white
+                text-decoration: underline
+                font-size: $small
+                font-weight: 500
+      .modal-footer
+        border: none
+
+// this is the background image on login page
+#hero
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  height: 100vh
+  max-height: none
+  .container
+    .title
+      position: relative
+      z-index: 4
+      color: white
+      font-family: $fontPrimary
+      font-weight: 300
+      font-size: $jumbo
+
