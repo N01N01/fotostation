@@ -41,6 +41,7 @@ class post extends MX_Controller {
 					"caption"     => post('link_caption'),
 					"description" => post('link_description'),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub')
 				);
 				break;
 			case 'image':
@@ -56,7 +57,8 @@ class post extends MX_Controller {
 					"category"  => "post",
 					"type"      => post('type'),
 					"image"     => post('image_url'),
-					"message"   => html_convert(post('message'))
+					"message"   => html_convert(post('message')),
+                    "name_pub"    => post('name_pub')
 				);
 				break;
 			case 'video':
@@ -74,6 +76,7 @@ class post extends MX_Controller {
 					"image"       => post('video_url'),
 					"description" => post('video_description'),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub')
 				);
 				break;
 
@@ -108,6 +111,7 @@ class post extends MX_Controller {
 					"type"        => post('type'),
 					"image"       => json_encode(post("images_url[]")),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub')
 				);
 				break;
 
@@ -124,6 +128,7 @@ class post extends MX_Controller {
 					"category"  => "post",
 					"type"      => post('type'),
 					"message"   => html_convert(post('message')),
+                    "name_pub"    => post('name_pub')
 				);
 				break;
 		}
@@ -225,6 +230,7 @@ class post extends MX_Controller {
 					"caption"     => post('link_caption'),
 					"description" => post('link_description'),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub'),
 				);
 				break;
 			case 'image':
@@ -240,7 +246,8 @@ class post extends MX_Controller {
 					"category"  => "post",
 					"type"      => post('type'),
 					"image"     => post('image_url'),
-					"message"   => html_convert(post('message'))
+					"message"   => html_convert(post('message')),
+                    "name_pub"    => post('name_pub')
 				);
 				break;
 			case 'video':
@@ -258,6 +265,7 @@ class post extends MX_Controller {
 					"image"       => post('video_url'),
 					"description" => post('video_description'),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub'),
 				);
 				break;
 
@@ -291,6 +299,7 @@ class post extends MX_Controller {
 					"type"        => post('type'),
 					"image"       => json_encode(post("images_url[]")),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub'),
 				);
 				break;
 
@@ -307,6 +316,7 @@ class post extends MX_Controller {
 					"category"    => "post",
 					"type"        => post('type'),
 					"message"     => html_convert(post('message')),
+                    "name_pub"    => post('name_pub'),
 				);
 				break;
 		}
@@ -386,7 +396,7 @@ class post extends MX_Controller {
 				$data["deplay"]         = $deplay;
 				$data["changed"]        = NOW;
 				$data["created"]        = NOW;
-
+               // $data["prog_name"]        = NOW;
 				$this->db->insert(FACEBOOK_SCHEDULES, $data);
 				$count++;
 			}

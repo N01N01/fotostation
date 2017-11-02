@@ -34,6 +34,7 @@
                                     <input type="checkbox" id="md_checkbox_all" class="filled-in chk-col-red checkAll">
                                     <label class="p0 m0" for="md_checkbox_all">&nbsp;</label>
                                 </th>
+
                                 <th><?=l('Option')?></th>
                                 <th><?=l('Account')?></th>
                                 <th><?=l('Name')?></th>
@@ -43,6 +44,8 @@
                                 <th><?=l('Repeat Post')?></th>
                                 <th><?=l('Status')?></th>
                                 <th><?=l('Created')?></th>
+                                <th><?=l('Name-pub')?></th>
+
                             </tr>
                         </thead>
                         <tbody>
