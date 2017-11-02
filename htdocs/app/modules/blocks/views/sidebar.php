@@ -82,6 +82,22 @@
                         <span><?=l('Update & Log')?></span>
                     </a>
                 </li> -->
+                    <li>
+                        <div class="btn-group" style="margin-top: 7px; margin-left: 7px;">
+                            <button type="button" class="btn btn-white waves-effect bg-white col-black"><?=strtoupper(LANGUAGE)?></button>
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu" style="min-width: 65px; text-align: center; margin-top: 0px!important;">
+                                <?php if(!empty($lang))
+                                    foreach ($lang as $row) {
+                                        ?>
+                                        <li><a class="waves-effect waves-block p0" href="<?=PATH?>language?l=<?=$row?>"><?=strtoupper($row)?></a></li>
+                                    <?php }?>
+                            </ul>
+                        </div>
+                    </li>
                 <?php }?>
             </ul>
         </div>

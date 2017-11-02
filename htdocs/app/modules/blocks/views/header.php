@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" style="display: none">
     <div class="container<?=session("uid")?"-fluid":""?>">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
@@ -17,27 +17,12 @@
                     <?php if(REGISTER_ALLOWED == 1){?>
                     <li class="li-register"><a href="javscript:void(0);" data-toggle="modal" data-target="#registerModal"><?=l('Register')?></a></li>
                     <?php }?>
-                    <li>
+                    <li style="display: none"><!-- set display none to login, cause the modal is already visible -->
                         <a href="javscript:void(0);" data-toggle="modal" data-target="#loginModal" href="<?=url("payments")?>" class="btn bg-light-green waves-effect" style="padding: 5px 10px;"><?=l('Login')?></a>
                     </li>
                     <?php }?>
                 <?php }?>
-                <li>
-                    <div class="btn-group" style="margin-top: 7px; margin-left: 7px;">
-                        <button type="button" class="btn btn-white waves-effect bg-white col-black"><?=strtoupper(LANGUAGE)?></button>
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" style="min-width: 65px; text-align: center; margin-top: 0px!important;">
-                            <?php if(!empty($lang))
-                            foreach ($lang as $row) {
-                            ?>
-                            <li><a class="waves-effect waves-block p0" href="<?=PATH?>language?l=<?=$row?>"><?=strtoupper($row)?></a></li>
-                            <?php }?>
-                        </ul>
-                    </div>
-                </li>
+
             </ul>
         </div>
     </div>

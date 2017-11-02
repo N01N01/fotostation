@@ -23,7 +23,7 @@
     
     <!-- Favicon-->
     <link rel="icon" href="<?=BASE?>assets/images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="<?=BASE?>assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -38,6 +38,8 @@
     <link href="<?=BASE?>assets/css/style.css" rel="stylesheet">
     <link href="<?=BASE?>assets/css/themes/all-themes.css" rel="stylesheet" />
     <link href="<?=BASE?>assets/css/custom.css" rel="stylesheet">
+    <!-- style from sass, overriding others -->
+    <link href="<?=BASE?>assets/css/main.css" rel="stylesheet">
     <script type="text/javascript">
         var PATH       = '<?=PATH?>';
         var BASE       = '<?=BASE?>';
@@ -73,7 +75,17 @@
     <?=modules::run("blocks/header")?>
     <?=$template['body']?>
 
-    <div class="modal fade box-modal" id="loginModal" tabindex="-1" role="dialog" style="display: none;">
+
+
+
+
+
+
+
+
+    <!-- MODAL LOGIN -->
+
+    <div class="box-modal" id="loginModal" tabindex="-1" role="dialog">
         <div class="modal-login modal-dialog" role="document" >
             <div class="modal-content">
                 <div class="modal-header bg-light-green">
@@ -83,28 +95,24 @@
                     <div class="body">
                         <form action="<?=url('user_management/ajax_login')?>" data-redirect="<?=current_url()?>">
                             <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">person</i>
-                                </span>
-                                <div class="form-line">
+                                <div>
                                     <input type="text" class="form-control" name="email" placeholder="<?=l('Email')?>" required autofocus>
                                 </div>
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="material-icons">lock</i>
-                                </span>
-                                <div class="form-line">
+                                <div>
                                     <input type="password" class="form-control" name="password" placeholder="<?=l('Password')?>" required>
                                 </div>
                             </div>
                             <div class="input-group">
-                              <div class="another_action pull-left text-left">
+                              <div class="another_action remember-me">
                                 <input type="checkbox" id="md_checkbox_38" name="remember" class="filled-in chk-col-grey">
                                 <label for="md_checkbox_38"><?=l('Remember me')?></label><br/>
-                                <a href="<?=url("forgot_password")?>"><?=l('Forgot password')?></a>
                               </div>
-                              <button type="submit" class="right btn bg-light-green waves-effect btnActionUpdate"><?=l('Login')?></button>
+                            </div>
+                            <button type="submit" class="btn bg-light-green waves-effect btnActionUpdate"><?=l('Login')?></button>
+                            <div class="forgot-password">
+                                <a href="<?=url("forgot_password")?>"><?=l('Forgot password?')?></a>
                             </div>
 
                             <?php if((FACEBOOK_ID != "" && FACEBOOK_SECRET != "") || (GOOGLE_ID != "" && GOOGLE_SECRET != "") || (TWITTER_ID != "" && TWITTER_SECRET != "")){?>
@@ -129,12 +137,23 @@
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    
-                </div>
             </div>
         </div>
     </div>
+
+
+    <!-- FINE MODAL LOGIN -->
+
+
+
+
+
+
+
+
+
+
+
 
     <?php if(REGISTER_ALLOWED == 1){?>
     <div class="modal fade box-modal" id="registerModal" tabindex="-1" role="dialog">

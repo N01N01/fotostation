@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" style="display: none">
     <div class="container wide">
         <div class="row">
             <div class="col-md-9 coptright"><?=l('2017-till eternity © Magica Emi. All rights reserved.')?></div>
