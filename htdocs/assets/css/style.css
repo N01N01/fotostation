@@ -6,10 +6,6 @@
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   border: none;
   position: fixed;
   top: 0;
@@ -1922,7 +1918,7 @@
     color: #fff !important; }
 
 .bg-light-green {
-  background-color: #8BC34A !important;
+  background-color: #8BC34A;
   color: #fff; }
   .bg-light-green .content .text,
   .bg-light-green .content .number {
@@ -2396,7 +2392,7 @@ a {
   animation: none !important; }
 
 section.content {
-  margin: 80px 15px 0 265px;
+  margin: 30px 15px 0 265px;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -6361,10 +6357,6 @@ fieldset[disabled] .form-control {
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   border: none;
   position: fixed;
   top: 0;
@@ -7199,7 +7191,7 @@ fieldset[disabled] .form-control {
   display: inline-block;
   height: calc(100vh - 50px);
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);

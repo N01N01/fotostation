@@ -1,0 +1,64 @@
+//variables
+//font size
+$xSmall: 0.5em
+$small: 0.75em
+$medium: 1em
+$big: 1.25em
+$large: 1.5em
+$xLarge: 1.75em
+$xxLarge: 2em
+$xxxLarge: 2.5em
+$jumbo: 3em
+$xJumbo: 5em
+
+//font-family
+$fontPrimary: 'Roboto', sans-serif
+
+//transitions
+$transitionSuperSlow: all 1.2s cubic-bezier(0.4, 0.05, 0.06, 0.99)
+$transitionSlow: all 1s cubic-bezier(0.4, 0.05, 0.06, 0.99)
+$transitionMedium: all 0.5s cubic-bezier(0.4, 0.05, 0.06, 0.99)
+$transitionFast: all 0.2s cubic-bezier(0.4, 0.05, 0.06, 0.99)
+
+//colors
+$black: #242526
+$grey: #f7f7f7
+$colorPrimary: #3f51b5
+
+$darkenGrey: darken(#f7f7f7, 8%)
+$darkestGrey: darken(#f7f7f7, 70%)
+
+// media dimensions
+$tablet-width: 768px
+$desktop-width: 1024px
+
+//settings for low height devices
+$low-height: 500px
+
+
+// media query mixin for mobile
+=media-mobile
+  @media screen and (max-width: $tablet-width - 1px)
+    @content
+
+// media query mixin for tablet
+=media-tablet
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1px)
+    @content
+
+// media query mixin for desktop
+=media-desktop
+  @media screen and (min-width: $desktop-width)
+    @content
+
+//mixin for low height
+=media-low-height
+  @media screen and (max-height: $low-height)
+    @content
+
+//flex mixin, (flex-direction, align-items, justify-content) are the parameters
+=flex($direction, $align, $justify)
+  display: flex
+  flex-direction: $direction
+  align-items: $align
+  justify-content: $justify

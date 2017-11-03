@@ -60,48 +60,27 @@
   <div class="copyright"><?=l('2017-till eternity © Magica Emi. All rights reserved.')?></div>
 </div>
 <?php }else{?>
+
+
+
+
+
+
+    <!-- PARTE DA MODIFICARE -->
+
+
+
 <div class="homepage">
-  <div id="hero">           
+    <!-- div with random image between all Unsplash catalog -->
+  <div id="hero" style="background-image: url('https://source.unsplash.com/random/1920x1080');">
+      <div class="opacity-background"></div>
       <div class="container herocontent">               
-          <div class="title uc"><?=l('THE ULTIMATE WAY TO HELP YOUR MARKETING EFFECTIVENESS ON FACEBOOK TODAY')?></div>                
-          <div class="description">
-            <?=l('Using social media is a fun and sure way to get new friends, customers and fans. Getting your Facebook profile out there for everyone to see is a hard and tedious task and time is very precious for all of us and promoting yourself on Facebook is a time-consuming everyday activity. Let it help you automate your daily activity and get you the crowd you deserve and desire')?>
-          </div>            
+          <div class="title uc">Fotostation</div>
       </div>
-      <img class="heroshot" src="<?=BASE?>assets/images/hero-img.jpg">
-  </div>
-
-  <div id="services">
-    <div class="container">
-        <div class="sectionhead  row ">
-            <span class="bigicon icon-cup "></span>
-            <div class="title"><?=l('This is what can do for you')?></div>
-            <hr class="separetor">
-         </div>
-        <div class="row">
-           <div class="col-md-4 item">
-               <img src="<?=BASE?>assets/images/s1.png" alt="">
-               <h4><?=l('Post/Schedule')?></h4>
-               <p><?=l('Post link, image, video and text to multi profiles, multi page, multi groups and special is post link to closed/secret groups')?></p>
-            </div> 
-            <div class="col-md-4 item">
-               <img src="<?=BASE?>assets/images/s10.png" alt="">
-               <h4><?=l('Report Schedule')?></h4>
-               <p><?=l('Report all info for posted. For example: post success, failure, processing, repeat, ...')?></p>
-            </div>
-
-            <div class="col-md-4 item">
-               <img src="<?=BASE?>assets/images/s12.png" alt="">
-               <h4><?=l('Preview Post')?></h4>
-               <p><?=l('Help you preview your post before publishing them')?></p>
-            </div>
-        </div>
-        <div class="row">
-          <p class="more text-center col-light-green uc"><?=l('And many more another feature...')?></p>
-        </div>
-    </div>
   </div>
 </div>
+
+    <!-- FINE PARTE DA MODIFICARE -->
 <?=modules::run("blocks/footer")?>
 <?php }?>
 
