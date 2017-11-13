@@ -23,7 +23,7 @@ class save extends MX_Controller {
 			case 'post':
 				switch (post('type')) {
 					case 'link':
-						if(post('link_url') == ""){
+						if(post('link_fb') == ""){
 							ms(array(
 								"st"    => "valid",
 								"label" => "bg-red",
@@ -42,6 +42,26 @@ class save extends MX_Controller {
 							"message"     => post('message'),
 						);
 						break;
+                    case 'linkfb':
+                        if(post('link_url') == ""){
+                            ms(array(
+                                "st"    => "valid",
+                                "label" => "bg-red",
+                                "txt"   => l('Link is required')
+                            ));
+                        }
+
+                        $data = array(
+                            "category"    => "post",
+                            "type"        => post('type'),
+                            "url"         => post('link_fb'),
+                            "image"       => post('link_picture'),
+                            "title"       => post('link_title'),
+                            "caption"     => post('link_caption'),
+                            "description" => post('link_description'),
+                            "message"     => post('message'),
+                        );
+                        break;
 					case 'image':
 						if(post('image_url') == ""){
 							ms(array(
