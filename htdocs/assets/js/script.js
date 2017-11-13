@@ -37,7 +37,7 @@
 
         if($('.js-dataTable').length > 0 || $('.js-dataTableSchedule').length > 0 || $('.js-dataTableScheduleAjax').length > 0){
             _dataTable = $('.js-dataTable').DataTable({
-                paging: false,
+                paging: true,
                 columnDefs: [ {
                     targets: 0,
                     orderable: false
@@ -46,7 +46,7 @@
                 language: {
                     search: 'Search ',
                 },
-                bPaginate: false,
+                bPaginate: true,
                 bLengthChange: false,
                 bFilter: true,
                 bInfo: false,
@@ -860,7 +860,22 @@
             }
         });
     }
-
+    $(document).on("click", ".btnDeletePage", function(){
+        _that  = $(this);
+        _id    = $(".categories").val();
+        _data  = $.param({token:token, id: _id});
+        $(".page-loader-action").fadeIn();
+        if(!_that.hasClass('disable')){
+            _that.addClass('disable');
+            $.post(PATH + "post/ajax_delete_page", _data, function(result){
+                setTimeout(function(){
+                    window.location.reload();
+                },2000);
+                $(".page-loader-action").fadeOut();
+                self.showSuccessAutoClose(result['txt'], "success", 2000);
+            },'json');
+        }
+    });
     this.FacebookJoinGroup = function(){
         $(".formFacebookSearch .enter-keyword").keypress(function(e){
             if(e.keyCode == 13){

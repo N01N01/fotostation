@@ -12,7 +12,7 @@
                                 <li role="presentation" class="" data-type="image"><a href="#messages_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">camera_alt</i> <?=l('IMAGE')?></a></li>
                                 <li role="presentation" class="" data-type="video"><a href="#settings_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">videocam</i> <?=l('VIDEO')?></a></li>
                                 <li role="presentation" class="" data-type="images"><a href="#images_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">perm_media</i> <?=l('MULTI IMAGE')?></a></li>
-                                <li role="presentation" class="" data-type="album"><a href="#reshare_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">camera_alt</i> <?=l('ALBUM')?></a></li>
+                                <li role="presentation" class="" data-type="linkfb"><a href="#reshare_animation_1" data-toggle="tab" aria-expanded="false"><i class="material-icons">camera_alt</i> <?=l('ALBUM')?></a></li>
 
                             </ul>
                             
@@ -111,7 +111,45 @@
                                     </div>
                                     <div class="list-images"></div>
                                 </div>
+                                <div role="tabpanel" class="tab-pane" id="reshare_animation_1">
+                                    <label><?=l('Link')?></label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" name="link_fb" class="form-control">
+                                        </div>
+                                    </div>
+                                    <label><?=l('Picture')?></label>
+                                    <div class="input-group">
+                                        <div class="form-line">
+                                            <input type="text" name="link_picture" class="form-control">
+                                        </div>
+                                        <span class="input-group-btn">
+                                          <a class="btn bg-red waves-effect dialog-upload"><i class="fa fa-upload" aria-hidden="true"></i> <?=l('Upload')?></a>
+                                        </span>
+                                    </div>
+                                    <label><?=l('Title')?></label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" name="link_title" class="form-control">
+                                        </div>
+                                    </div>
+                                    <label><?=l('Caption')?></label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" name="link_caption" class="form-control">
+                                        </div>
+                                    </div>
+                                    <label><?=l('Description')?></label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <textarea rows="4" name="link_description" class="form-control no-resize"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
+
 
                             <div class="row">
                                 <div class="col-md-12 col-xs-12">
@@ -154,6 +192,7 @@
                                                     <b><i class="fa fa-bullseye" aria-hidden="true"></i> <?=l('Delay (minutes)')?></b>
                                                     <div class="input-group mb0">
                                                         <select name="deplay" class="form-control">
+                                                               <option value="0">NO</option>
                                                             <?php for ($i = 1; $i <= 720; $i++) {
                                                                 if(MINIMUM_DEPLAY <= $i){
                                                             ?>
@@ -338,7 +377,8 @@
                                 <option value="<?=$row->id?>" <?=(session("category") == $row->id)?"selected":""?>><?=$row->name?></option>
                                 <?php }}?>
                             </select>
-                        </div> 
+                        </div>
+
                         <div class="form-group wa mr15">
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn bg-blue-grey waves-effect btnAddCategory" data-type="post" data-toggle="tooltip" title="<?=l('Add new category')?>" data-action="<?=cn('ajax_add_category')?>"><i class="fa fa-plus" aria-hidden="true"></i></button>
@@ -346,18 +386,19 @@
                                 <button type="button" class="btn bg-blue-grey waves-effect btnDeleteCategory" data-toggle="tooltip" title="<?=l('Remove category selected')?>"> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             </div>
                         </div>
+                        <div class="form-group wa mr15">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn bg-blue-grey waves-effect btnDeletepage" data-type="post" data-toggle="tooltip" title="<?=l('Remove category selected')?>"> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
                         <div class="form-group wa" style="margin-top: 8px;">
                             <input type="checkbox" id="md_checkbox_profile" class="filled-in chk-col-deep-orange filter_profile" checked="" value="profile">
                             <label class="mb0 mr15" for="md_checkbox_profile"><?=l('All Profiles')?></label>
 
-                            <input type="checkbox" id="md_checkbox_group" class="filled-in chk-col-deep-orange filter_group" checked="" value="group">
-                            <label class="mb0 mr15" for="md_checkbox_group"><?=l('All Groups')?></label>
                             
                             <input type="checkbox" id="md_checkbox_page" class="filled-in chk-col-deep-orange filter_page" checked="" value="page">
                             <label class="mb0 mr15" for="md_checkbox_page"><?=l('All Pages')?></label>
 
-                            <input type="checkbox" id="md_checkbox_likedpage" class="filled-in chk-col-deep-orange filter_likedpage" checked="" value="liked">
-                            <label class="m0" for="md_checkbox_likedpage"><?=l('All Liked Pages')?></label>
                         </div>
                     </div>
                 </div>

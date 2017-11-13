@@ -24,7 +24,9 @@ class post_model extends MY_Model {
 				}
 				
 				$this->db->where("uid = '".session("uid")."'");
-				$this->db->order_by("type", "desc");
+                $this->db->where("type != 'group'");
+                $this->db->where("type != 'liked'");
+                $this->db->order_by("type", "desc");
 				$query = $this->db->get(FACEBOOK_GROUPS);
 				$result[$key]->groups = $query->result();
 			}
