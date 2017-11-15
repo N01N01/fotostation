@@ -473,7 +473,7 @@ $idf = $result[0]->uid ;
 $imagesDir = "uploads/user$idf/" ;
 //print_r( $result[0]->uid);
 print_r($imagesDir);
-$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);q
+$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 print_r($images);
 $randomImage = $images[array_rand($images)]; // See comments
 $path_parts = pathinfo($randomImage);
