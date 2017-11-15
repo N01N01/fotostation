@@ -240,12 +240,26 @@ class post extends MX_Controller
         switch (post('type')) {
             case 'link':
                 if (post('link_url') == "") {
+
+
+
+
+
                     ms(array(
                         "st" => "valid",
                         "label" => "bg-red",
                         "txt" => l('Link is required')
                     ));
                 }
+
+
+
+
+
+
+
+
+
 
                 $data = array(
                     "category" => "post",
@@ -262,20 +276,78 @@ class post extends MX_Controller
 
             case 'image':
                 if (post('image_url') == "") {
+
                     ms(array(
                         "st" => "valid",
                         "label" => "bg-red",
                         "txt" => l('Image is required')
                     ));
+
                 }
 
-                $data = array(
-                    "category" => "post",
-                    "type" => post('type'),
-                    "image" => post('image_url'),
-                    "message" => html_convert(post('message')),
-                    "name_pub" => post('name_pub')
-                );
+
+                    $idf = session("uid");
+                    $src_file_name = post('image_url');
+
+
+
+                    $supported_image = array(
+                        'gif',
+                        'jpg',
+                        'jpeg',
+                        'png'
+                    );
+
+
+                    $ext = strtolower(pathinfo($src_file_name, PATHINFO_EXTENSION)); // Uso strtolower per le estensioni scritte in maiuscolo
+                    if (in_array($ext, $supported_image)) {
+
+                        $data = array(
+                            "category" => "post",
+                            "type" => post('type'),
+                            "image" => post('image_url'),
+                            "message" => html_convert(post('message')),
+                            "name_pub" => post('name_pub')
+                        );
+
+
+                    } else {
+
+                       // $idf = $result[0]->uid ;
+//echo $idf;
+                        $imagesDir = "uploads/user$idf/" ;
+//print_r( $result[0]->uid);
+                       // print_r($imagesDir);
+                        $images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+                       // print_r($images);
+                        $randomImage = $images[array_rand($images)]; // See comments
+                        $path_parts = pathinfo($randomImage);
+                       // print_r($path_parts['basename']);
+
+
+
+                        $data = array(
+                            "category" => "post",
+                            "type" => post('type'),
+                            "image" => post('image_url').'/'.$path_parts['basename'],
+                            "message" => html_convert(post('message')),
+                            "name_pub" => post('name_pub')
+                        );
+
+
+                    }
+
+
+
+//                $data = array(
+//                    "category" => "post",
+//                    "type" => post('type'),
+//                    "image" => post('image_url'),
+//                    "message" => html_convert(post('message')),
+//                    "name_pub" => post('name_pub')
+//                );
+
+
                 break;
             case 'video':
                 if (post('video_url') == "") {
