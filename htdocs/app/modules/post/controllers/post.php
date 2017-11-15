@@ -286,9 +286,9 @@ class post extends MX_Controller
                 }
 
 
-                    $idf = session("uid");
+                    //$idf = session("uid");
                     $src_file_name = post('image_url');
-
+                    $path_folder = parse_url($src_file_name);
 
 
                     $supported_image = array(
@@ -313,13 +313,15 @@ class post extends MX_Controller
 
                     } else {
 
-                       // $idf = $result[0]->uid ;
+                        //$idf = $result[0]->uid ;
 //echo $idf;
-                        $imagesDir = "uploads/user$idf/" ;
+
+                        $imagesDir = $path_folder['path'].'/';
+                        //$imagesDir = "uploads/user$idf/" ;
 //print_r( $result[0]->uid);
                        // print_r($imagesDir);
                         $images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-                       // print_r($images);
+                      //  print_r($images);
                         $randomImage = $images[array_rand($images)]; // See comments
                         $path_parts = pathinfo($randomImage);
                        // print_r($path_parts['basename']);
@@ -329,7 +331,8 @@ class post extends MX_Controller
                         $data = array(
                             "category" => "post",
                             "type" => post('type'),
-                            "image" => post('image_url').'/'.$path_parts['basename'],
+                            "image" => 'https://stage.fotostation.it/'.post('image_url').'/'.$path_parts['basename'],
+                            //"image" => post('image_url').$path_parts['basename'],
                             "message" => html_convert(post('message')),
                             "name_pub" => post('name_pub')
                         );

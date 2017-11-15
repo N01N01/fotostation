@@ -468,17 +468,18 @@
 <!--<pre>--><?php //var_dump($this->_ci_cached_vars); ?><!--</pre>-->
 
 <?php
-$idf = $result[0]->uid ;
-//echo $idf;
-$imagesDir = "uploads/user$idf/" ;
-//print_r( $result[0]->uid);
-print_r($imagesDir);
-$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-print_r($images);
-$randomImage = $images[array_rand($images)]; // See comments
-$path_parts = pathinfo($randomImage);
-print_r($path_parts['basename']);
-?>
+//$idf = $result[0]->uid ;
+////echo $idf;
+//$imagesDir = "uploads/user$idf/" ;
+////$imagesDir = post('image_url') ;
+////print_r( $result[0]->uid);
+//print_r($imagesDir);
+//$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+//print_r($images);
+//$randomImage = $images[array_rand($images)]; // See comments
+//$path_parts = pathinfo($randomImage);
+//print_r($path_parts['basename']);
+//?>
 <div class="modal fade" id="modal-update-category" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
