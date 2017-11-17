@@ -1,3 +1,8 @@
+<script>
+    window.onload = function() {
+        document.getElementById('loginModal').style.display = 'none';
+    };
+</script>
 <form  action="<?=url('user_management/ajax_timezone')?>" data-redirect="<?=url("dashboard")?>">
     <div class="config-timezone">
         <div class="col-md-offset-4 col-sm-offset-3 col-md-4 col-sm-6 col-xs-12">

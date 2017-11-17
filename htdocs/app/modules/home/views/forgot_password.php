@@ -1,3 +1,8 @@
+<script>
+    window.onload = function() {
+        document.getElementById('loginModal').style.display = 'none';
+    };
+</script>
 <div class="box-login">
   <div class="login-form">
     <ul class="login-nav" >
